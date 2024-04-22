@@ -1,0 +1,265 @@
+
+BUILD STAGE 1 :: INSTALL THE REQUIRED TOOLS
+
+[3J[H[2J
+------------------------------------[[[[ Install-Tools-On-MacOS-Or-Linux ]]]]------------------------------------
+
+This command will install all of the required Node.js packages. This script was created on MacOS, but can be used in any Linux Distro that has curl installed. This run started on Mon Apr 22 05:15:14 EDT 2024.
+
+=> nvm is already installed in /Users/jgorospe/.nvm, trying to update using git
+=> => Compressing and cleaning up git repository
+
+=> nvm source string already in /Users/jgorospe/.bashrc
+=> bash_completion source string already in /Users/jgorospe/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+Now using node v18.20.2 (npm v10.5.2)
+Now using node v18.20.2 (npm v10.5.2)
+[0;32mdefault[0m [0;90m->[0m [0;32m18[0m ([0;90m->[0m [0;32mv18.20.2[0m)
+v18.20.2
+yarn info v1.22.22
+Done in 1.54s.
+yarn install v1.22.22
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 0.49s.
+yarn run v1.22.22
+$ /Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/.bin/hardhat
+Hardhat version 2.22.3
+
+Usage: hardhat [GLOBAL OPTIONS] [SCOPE] <TASK> [TASK OPTIONS]
+
+GLOBAL OPTIONS:
+
+  --config           	A Hardhat config file. 
+  --emoji            	Use emoji in messages. 
+  --flamegraph       	Generate a flamegraph of your Hardhat tasks 
+  --help             	Shows this message, or a task's help if its name is provided 
+  --max-memory       	The maximum amount of memory that Hardhat can use. 
+  --network          	The network to connect to. 
+  --show-stack-traces	Show stack traces (always enabled on CI servers). 
+  --tsconfig         	A TypeScript config file. 
+  --typecheck        	Enable TypeScript type-checking of your scripts/tests 
+  --verbose          	Enables Hardhat verbose logging 
+  --version          	Shows hardhat's version. 
+
+
+AVAILABLE TASKS:
+
+  check              	Check whatever you need
+  clean              	Clears the cache and deletes all artifacts
+  compile            	Compiles the entire project, building all artifacts
+  console            	Opens a hardhat console
+  coverage           	Generates a code coverage report for tests
+  deploy             	Deploy contracts
+  etherscan-verify   	submit contract source code to etherscan
+  export             	export contract deployment of the specified network into one file
+  export-artifacts   	
+  flatten            	Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
+  gas-reporter:merge 	
+  help               	Prints this message
+  node               	Starts a JSON-RPC server on top of Hardhat EVM
+  run                	Runs a user-defined script after compiling the project
+  size-contracts     	Output the size of compiled contracts
+  sourcify           	submit contract source code to sourcify (https://sourcify.dev)
+  test               	Runs mocha tests
+  verify             	Verifies contract on Etherscan
+
+
+AVAILABLE TASK SCOPES:
+
+  vars               	Manage your configuration variables
+
+To get help for a specific task run: npx hardhat help [SCOPE] <TASK>
+
+Done in 1.64s.
+
+
+This run ended on Mon Apr 22 05:15:47 EDT 2024.
+
+
+------------------------------------[[[[ Tool Runner Script ]]]]------------------------------------
+
+
+This tool runner script can be used to run the following commands to deploy the Solidity examples from the Patrick Collins FCC Solidity YouTube course.
+
+You can view just this help menu again (without triggering any automation) by running 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h' or 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h --help'.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes-Clean-Environment
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Real-Ethereum-Testnet
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Hardhat-Test
+
+If you're running this for the first time run the following before running any of these scripts.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+
+Then you can run the following combined commands in your terminal to deploy the contract to the Hardhat local blockchain node.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes && bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+
+You can also use the provided Lesson12CodeSessions_start-automation-build-pipeline.sh to run all the above commands in a sequence similar to a build pipeline.
+
+bash ./Lesson12CodeSessions_start-automation-build-pipeline.sh
+
+
+
+BUILD STAGE 2 :: TEST THE DEPLOYED SMART CONTRACT(S) ON A LOCAL BLOCKCHAIN NODE
+
+[3J[H[2J
+------------------------------------[[[[ Start-Hardhat-Test ]]]]------------------------------------
+
+This command will run the Start-Hardhat-Test script. This run started on Mon Apr 22 05:15:49 EDT 2024.
+
+Compiled 6 Solidity files successfully (evm target: london).
+
+  OurToken Unit Test
+    ✔ was deployed
+    constructor
+      ✔ Should have correct INITIAL_SUPPLY of token 
+      ✔ initializes the token with the correct name and symbol 
+    transfers
+      ✔ Should be able to transfer tokens successfully to an address
+      ✔ emits an transfer event, when an transfer occurs
+    allowances
+      ✔ Should approve other address to spend token
+      ✔ doesn't allow an unnaproved member to do transfers
+      ✔ emits an approval event, when an approval occurs
+      ✔ the allowance being set is accurate
+      ✔ won't allow a user to go over the allowance
+
+
+  10 passing (1s)
+
+·-----------------------------|----------------------------|-------------|-----------------------------·
+|     Solc version: 0.8.7     ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 30000000 gas  │
+······························|····························|·············|······························
+|  Methods                                                                                             │
+·············|················|··············|·············|·············|···············|··············
+|  Contract  ·  Method        ·  Min         ·  Max        ·  Avg        ·  # calls      ·  usd (avg)  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  approve       ·       46894  ·      46906  ·      46904  ·            5  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  transfer      ·           -  ·          -  ·      52205  ·            3  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  transferFrom  ·           -  ·          -  ·      55568  ·            1  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  Deployments                ·                                          ·  % of limit   ·             │
+······························|··············|·············|·············|···············|··············
+|  OurToken                   ·           -  ·          -  ·    1174446  ·        3.9 %  ·          -  │
+·-----------------------------|--------------|-------------|-------------|---------------|-------------·
+
+This run ended on Mon Apr 22 05:15:55 EDT 2024.
+
+
+------------------------------------[[[[ Tool Runner Script ]]]]------------------------------------
+
+
+This tool runner script can be used to run the following commands to deploy the Solidity examples from the Patrick Collins FCC Solidity YouTube course.
+
+You can view just this help menu again (without triggering any automation) by running 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h' or 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h --help'.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes-Clean-Environment
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Real-Ethereum-Testnet
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Hardhat-Test
+
+If you're running this for the first time run the following before running any of these scripts.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+
+Then you can run the following combined commands in your terminal to deploy the contract to the Hardhat local blockchain node.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes && bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+
+You can also use the provided Lesson12CodeSessions_start-automation-build-pipeline.sh to run all the above commands in a sequence similar to a build pipeline.
+
+bash ./Lesson12CodeSessions_start-automation-build-pipeline.sh
+
+
+
+
+
+ALL TESTS PASSED. DEPLOYMENT TO THE ETHEREUM TESTNET WILL CONTINUE.
+
+
+BUILD STAGE 3 :: DEPLOY THE SMART CONTRACT(S) TO ETHEREUM TESTNET
+
+[3J[H[2J
+------------------------------------[[[[ Start-Deployment-On-Real-Ethereum-Testnet ]]]]------------------------------------
+
+This command will run the Start-Deployment-On-Real-Ethereum-Testnet script. This run started on Mon Apr 22 05:15:57 EDT 2024.
+
+
+
+-------->>>> Deployment Results Log :: Start-Deployment-On-Real-Ethereum-Testnet :: Sepolia <<<<--------
+Nothing to compile
+deploying "OurToken" (tx: 0x514e97ff970036163b65db96f2089ff15d9381b669055fc7a58fc75ea5dc45ef)...: deployed at 0x6891659932154b569b06eDA73fDCe489983ac134 with 1174446 gas
+ourToken deployed at 0x6891659932154b569b06eDA73fDCe489983ac134
+Verifying contract...
+TypeError: customChains is not iterable
+    at getEtherscanEndpoints (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/network/prober.ts:23:37)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at SimpleTaskDefinition.verifySubtask [as action] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/index.ts:221:30)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at verify (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/helper-functions.js:9:5)
+    at Object.module.exports [as func] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/deploy/01-deploy-token.js:24:5)
+    at DeploymentsManager.executeDeployScripts (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat-deploy/src/DeploymentsManager.ts:1220:22)
+
+
+This run ended on Mon Apr 22 05:16:15 EDT 2024.
+
+
+------------------------------------[[[[ Tool Runner Script ]]]]------------------------------------
+
+
+This tool runner script can be used to run the following commands to deploy the Solidity examples from the Patrick Collins FCC Solidity YouTube course.
+
+You can view just this help menu again (without triggering any automation) by running 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h' or 'bash ./Lesson12CodeSessions_start-deployment-scripts.sh -h --help'.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes-Clean-Environment
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Real-Ethereum-Testnet
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Hardhat-Test
+
+If you're running this for the first time run the following before running any of these scripts.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+
+Then you can run the following combined commands in your terminal to deploy the contract to the Hardhat local blockchain node.
+
+bash ./Lesson12CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes && bash ./Lesson12CodeSessions_start-deployment-scripts.sh Start-Deployment-On-A-Specific-Network hardhat
+
+You can also use the provided Lesson12CodeSessions_start-automation-build-pipeline.sh to run all the above commands in a sequence similar to a build pipeline.
+
+bash ./Lesson12CodeSessions_start-automation-build-pipeline.sh
+
+
+-------->>>> Deployment Results Log :: Start-Deployment-On-Real-Ethereum-Testnet :: Sepolia <<<<--------
+Nothing to compile
+deploying "OurToken" (tx: 0x514e97ff970036163b65db96f2089ff15d9381b669055fc7a58fc75ea5dc45ef)...: deployed at 0x6891659932154b569b06eDA73fDCe489983ac134 with 1174446 gas
+ourToken deployed at 0x6891659932154b569b06eDA73fDCe489983ac134
+Verifying contract...
+TypeError: customChains is not iterable
+    at getEtherscanEndpoints (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/network/prober.ts:23:37)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at SimpleTaskDefinition.verifySubtask [as action] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/index.ts:221:30)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at verify (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/helper-functions.js:9:5)
+    at Object.module.exports [as func] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/deploy/01-deploy-token.js:24:5)
+    at DeploymentsManager.executeDeployScripts (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat-deploy/src/DeploymentsManager.ts:1220:22)
+
+This automation build pipeline run ended on Mon Apr 22 05:15:12 EDT 2024.
+

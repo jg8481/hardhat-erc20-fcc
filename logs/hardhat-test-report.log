@@ -1,0 +1,37 @@
+Compiled 6 Solidity files successfully (evm target: london).
+
+  OurToken Unit Test
+    ✔ was deployed
+    constructor
+      ✔ Should have correct INITIAL_SUPPLY of token 
+      ✔ initializes the token with the correct name and symbol 
+    transfers
+      ✔ Should be able to transfer tokens successfully to an address
+      ✔ emits an transfer event, when an transfer occurs
+    allowances
+      ✔ Should approve other address to spend token
+      ✔ doesn't allow an unnaproved member to do transfers
+      ✔ emits an approval event, when an approval occurs
+      ✔ the allowance being set is accurate
+      ✔ won't allow a user to go over the allowance
+
+
+  10 passing (1s)
+
+·-----------------------------|----------------------------|-------------|-----------------------------·
+|     Solc version: 0.8.7     ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 30000000 gas  │
+······························|····························|·············|······························
+|  Methods                                                                                             │
+·············|················|··············|·············|·············|···············|··············
+|  Contract  ·  Method        ·  Min         ·  Max        ·  Avg        ·  # calls      ·  usd (avg)  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  approve       ·       46894  ·      46906  ·      46904  ·            5  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  transfer      ·           -  ·          -  ·      52205  ·            3  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  OurToken  ·  transferFrom  ·           -  ·          -  ·      55568  ·            1  ·          -  │
+·············|················|··············|·············|·············|···············|··············
+|  Deployments                ·                                          ·  % of limit   ·             │
+······························|··············|·············|·············|···············|··············
+|  OurToken                   ·           -  ·          -  ·    1174446  ·        3.9 %  ·          -  │
+·-----------------------------|--------------|-------------|-------------|---------------|-------------·

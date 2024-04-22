@@ -29,7 +29,7 @@ const ETHERSCAN_API_KEY =
   process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
 const POLYGONSCAN_API_KEY =
   process.env.POLYGONSCAN_API_KEY || "Your polygonscan API key"
-const REPORT_GAS = process.env.REPORT_GAS.toLowerCase() === "true" || false
+const REPORT_GAS = process.env.REPORT_GAS || false
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -46,10 +46,7 @@ module.exports = {
     },
     sepolia: {
       url: SEPOLIA_RPC_URL,
-      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-      //accounts: {
-      //     mnemonic: MNEMONIC,
-      // },
+      accounts: [PRIVATE_KEY],
       saveDeployments: true,
       chainId: 11155111,
       blockConfirmation: 6,

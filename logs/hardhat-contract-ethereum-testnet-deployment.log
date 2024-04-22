@@ -1,0 +1,16 @@
+-------->>>> Deployment Results Log :: Start-Deployment-On-Real-Ethereum-Testnet :: Sepolia <<<<--------
+Nothing to compile
+deploying "OurToken" (tx: 0x514e97ff970036163b65db96f2089ff15d9381b669055fc7a58fc75ea5dc45ef)...: deployed at 0x6891659932154b569b06eDA73fDCe489983ac134 with 1174446 gas
+ourToken deployed at 0x6891659932154b569b06eDA73fDCe489983ac134
+Verifying contract...
+TypeError: customChains is not iterable
+    at getEtherscanEndpoints (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/network/prober.ts:23:37)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at SimpleTaskDefinition.verifySubtask [as action] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/@nomiclabs/hardhat-etherscan/src/index.ts:221:30)
+    at Environment._runTaskDefinition (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:359:14)
+    at Environment.run (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat/src/internal/core/runtime-environment.ts:192:14)
+    at verify (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/helper-functions.js:9:5)
+    at Object.module.exports [as func] (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/deploy/01-deploy-token.js:24:5)
+    at DeploymentsManager.executeDeployScripts (/Users/jgorospe/Documents/GitHub/hardhat-erc20-fcc/node_modules/hardhat-deploy/src/DeploymentsManager.ts:1220:22)
